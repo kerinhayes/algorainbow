@@ -23,8 +23,9 @@ The app will have a single screen with the main visualization window, sorting ch
 * Selection Sort
 * Counting Sort
 
+### Timeline
 
-Day 1: choose algorithms and set up
-Day 2: work on rendering display
-Day 3: toggle buttons and speed controls if time
-Day 4: styling
+* Day 1: write code for algorithms and basic setup
+* Day 2: work on rendering display
+* Day 3: continue with rendering, toggling, timer
+* Days 4-5: finish remaining + styling
