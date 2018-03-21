@@ -1,4 +1,4 @@
-Javascript Project Proposal
+## Javascript Project Proposal
 
 Sorting Algorithm Visualizer that uses color pixels to represent elements in a numbered array.
 
@@ -6,11 +6,20 @@ Users will be able to choose an algorithm and watch the colors align into a rain
 
 The app will have a single screen with the main visualization window, sorting choices, and nav links to my information.
 
-Technologies
+### Technologies
 
-Javascript for logic
-Canvas for rendering
-Webpack
+* Javascript for logic
+* Canvas for rendering
+* Webpack
+
+### Algorithms
+
+* Merge Sort
+* Bubble Sort
+* Quick Sort
+* Selection Sort
+* Counting Sort
+
 
 
 Day 1: choose algorithms and set up
