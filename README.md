@@ -4,7 +4,9 @@ Sorting Algorithm Visualizer that uses color pixels to represent elements in a n
 
 Users will be able to choose an algorithm and watch the colors align into a rainbow-ish display, and buttons on the side will allow them to toggle between different options and perhaps to control speed of animation.
 
-The app will have a single screen with the main visualization window, sorting choices, and nav links to my information.
+The app will have a single screen with the main visualization window, sorting choices and a timer on the left, and nav links to my information below.
+
+
 
 ### Technologies
 
@@ -20,7 +22,7 @@ The app will have a single screen with the main visualization window, sorting ch
 * Selection Sort
 * Counting Sort
 
-
+![wireframe](https://github.com/kerinhayes/js-project/images/algorvisual.png)
 
 Day 1: choose algorithms and set up
 Day 2: work on rendering display
