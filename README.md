@@ -22,7 +22,7 @@ The app will have a single screen with the main visualization window, sorting ch
 * Selection Sort
 * Counting Sort
 
-![wireframe](https://github.com/kerinhayes/js-project/images/algorvisual.png)
+![wireframe](https://github.com/kerinhayes/js-project/blob/master/images/algorvisual.png)
 
 Day 1: choose algorithms and set up
 Day 2: work on rendering display
