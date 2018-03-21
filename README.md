@@ -6,6 +6,7 @@ Users will be able to choose an algorithm and watch the colors align into a rain
 
 The app will have a single screen with the main visualization window, sorting choices and a timer on the left, and nav links to my information below.
 
+![wireframe](https://github.com/kerinhayes/js-project/blob/master/images/algorvisual.png)
 
 
 ### Technologies
@@ -22,7 +23,6 @@ The app will have a single screen with the main visualization window, sorting ch
 * Selection Sort
 * Counting Sort
 
-![wireframe](https://github.com/kerinhayes/js-project/blob/master/images/algorvisual.png)
 
 Day 1: choose algorithms and set up
 Day 2: work on rendering display
