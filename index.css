@@ -1,0 +1,48 @@
+.buttons {
+  display: flex;
+  z-index: 4;
+  
+}
+
+.canvas-div {
+  position: relative;
+  height: 450px;
+  width: 600px;
+}
+
+#window-canvas {
+  position: absolute;
+  top: 35px;
+  left: 40px;
+  z-index: 3;
+
+}
+
+#merge-canvas {
+  position: absolute;
+  top: 135px;
+  left: 40px;
+  z-index: 3;
+}
+
+#selection-canvas {
+  position: absolute;
+  top: 235px;
+  left: 40px;
+  z-index: 3;
+}
+
+#bubble-canvas {
+  position: absolute;
+  top: 335px;
+  left: 40px;
+  z-index: 3;
+}
+
+#background-canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+
+}

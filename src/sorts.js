@@ -20,48 +20,17 @@ function* selectionSort(arr) {
         for(let i = j + 1; i < arr.length; i++) {
           if (arr[i] < arr[min]) {
           [arr[i], arr[min]] = [arr[min], arr[i]];
+          yield arr;
       }
     }
-    yield min;
   }
 }
 
-// function merge (arr1, arr2) {
-//   let merged = [];
-//
-//   while (arr1.length && arr2.length) {
-//
-//     if (arr1[0] < arr2[0]) {
-//       merged.push(arr1.shift());
-//     } else {
-//       merged.push(arr2.shift());
-//     }
-//   }
-//   merged = merged.concat(arr1).concat(arr2);
-//   return merged;
-//
-// }
-//
-// function* mergeSort(arr) {
-//
-//     if (arr.length <= 1) { yield arr; }
-//
-//
-//       let mid = Math.floor(arr.length/2);
-//       yield arr;
-//
-//       let left = mergeSort(arr.slice(0, mid));
-//       let right = mergeSort(arr.slice(mid));
-//
-//
-//       yield merge(left, right);
-//
-// }
 
 function* mergeSortBottomUp(array) {
-  var step = 1;
+  let step = 1;
   while (step < array.length) {
-    var left = 0;
+    let left = 0;
     while (left + step < array.length) {
       mergeBottomUp(array, left, step);
       left += step * 2;
@@ -74,13 +43,13 @@ function* mergeSortBottomUp(array) {
 }
 
 function mergeBottomUp(array, left, step) {
-  var right = left + step;
-  var end = Math.min(left + step * 2 - 1, array.length - 1);
-  var leftMoving = left;
-  var rightMoving = right;
-  var temp = [];
+  let right = left + step;
+  let end = Math.min(left + step * 2 - 1, array.length - 1);
+  let leftMoving = left;
+  let rightMoving = right;
+  let temp = [];
 
-  for (var i = left; i <= end; i++) {
+  for (let i = left; i <= end; i++) {
     if ((array[leftMoving] <= array[rightMoving] || rightMoving > end) &&
         leftMoving < right) {
       temp[i] = array[leftMoving];
@@ -91,46 +60,31 @@ function mergeBottomUp(array, left, step) {
     }
   }
 
-  for (var j = left; j <= end; j++) {
+  for (let j = left; j <= end; j++) {
     array[j] = temp[j];
   }
 }
 
 function* qsort(arr) {
-    var stack = [arr];
-    var sorted = [];
+    let stack = arr.slice(1);
+    let sorted = arr;
+    let pivot = arr[0];
+    let left = [];
+    let right = [];
+    let mid = arr.length/2;
+
 
     while (stack.length) {
-        var temp = stack.pop(), tl = temp.length;
-
-        if (tl === 1) {
-            sorted.push(temp[0]);
-            continue;
-        }
-        var pivot = temp[0];
-        var left = [], right = [];
-
-        for (var i = 1; i < tl; i++) {
-            if (temp[i] < pivot) {
-                left.push(temp[i]);
-            } else {
-                right.push(temp[i]);
-            }
-            yield temp;
+      for(let i = 0; i < stack.length; i++) {
+        if (stack[i] < pivot) {
+          left.push(stack.shift);
+        } else {
+          right.push(stack.shift);
         }
 
-        left.push(pivot);
-
-        if (right.length)
-            stack.push(right);
-        if (left.length)
-            stack.push(left);
-
-
+      }
+      yield left.concat(pivot).concat(right);
     }
-
-    yield sorted;
-
 
 }
 
