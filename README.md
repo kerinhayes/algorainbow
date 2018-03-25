@@ -6,7 +6,10 @@ Users will be able to choose an algorithm and watch the colors align into a rain
 
 The app will have a single screen with the main visualization window, sorting choices and a timer on the left, and nav links to my information below.
 
-![wireframe](https://github.com/kerinhayes/js-project/blob/master/images/algorvisual.png)
+![quick](https://github.com/kerinhayes/algorainbow/blob/master/images/quick-gif.gif)
+![merge](https://github.com/kerinhayes/algorainbow/blob/master/images/merge-gif.gif)
+![select](https://github.com/kerinhayes/algorainbow/blob/master/images/select-gif.gif)
+![bubble](https://github.com/kerinhayes/algorainbow/blob/master/images/bubble-gif.gif)
 
 
 ### Technologies
@@ -21,11 +24,3 @@ The app will have a single screen with the main visualization window, sorting ch
 * Bubble Sort
 * Quick Sort
 * Selection Sort
-* Counting Sort
-
-### Timeline
-
-* Day 1: write code for algorithms and basic setup
-* Day 2: work on rendering display
-* Day 3: continue with rendering, toggling, timer
-* Days 4-5: finish remaining + styling
