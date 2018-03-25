@@ -1,13 +1,54 @@
+body {
+
+  background-color: #CCCCFF;
+  display: flex;
+  flex-direction: column;
+  font-family: 'courier new';
+}
+
+h1 {
+  align-self: center;
+  color: #191970;
+  letter-spacing: 3px;
+}
+
 .buttons {
   display: flex;
-  z-index: 4;
-  
+  position: absolute;
+  justify-content: space-around;
+  bottom: 10px;
+  left: 40px;
+  z-index: 5;
+
+}
+
+#merge, #shuffle, #selection, #bubble, #quick, #start-all {
+  font-family: 'courier new';
+  font-weight: bold;
+  color: #191970;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+
+#merge:hover, #shuffle:hover, #selection:hover, #bubble:hover, #quick:hover, #start-all:hover {
+  background-color: #191970;
+  color: #CCCCFF;
+}
+
+#merge:focus, #shuffle:focus, #selection:focus, #bubble:focus, #quick:focus, #start-all:focus {
+  outline: none;
 }
 
 .canvas-div {
   position: relative;
   height: 450px;
   width: 600px;
+  align-self: center;
 }
 
 #window-canvas {

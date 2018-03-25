@@ -1,4 +1,16 @@
 
+Array.prototype.flatten = function () {
+let flattened = [];
+
+this.forEach( (el) => {
+  if (el instanceof Array) {
+    flattened = flattened.concat(el.flatten());
+  } else {
+    flattened.push(el);
+  }
+});
+  return flattened;
+};
 
 function* bubbleSort(arr) {
   let sorted = false;
@@ -6,11 +18,12 @@ function* bubbleSort(arr) {
       sorted = true;
       for (let i = 0; i < arr.length - 1; i++) {
         if (arr[i] > arr[i + 1]) {
-          [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
           sorted = false;
           yield sorted;
+          [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];}
         }
-      }
+
+        // yield sorted;
     }
 }
 
@@ -19,11 +32,16 @@ function* selectionSort(arr) {
       let min = j;
         for(let i = j + 1; i < arr.length; i++) {
           if (arr[i] < arr[min]) {
-          [arr[i], arr[min]] = [arr[min], arr[i]];
-          yield arr;
-      }
+            min = i;
+            yield min;
+
+          }
+        }
+        if (j !== min) {
+          [arr[j], arr[min]] = [arr[min], arr[j]];
+          // yield min;
+        }
     }
-  }
 }
 
 
@@ -34,7 +52,7 @@ function* mergeSortBottomUp(array) {
     while (left + step < array.length) {
       mergeBottomUp(array, left, step);
       left += step * 2;
-      yield array;
+      yield step;
 
     }
     step *= 2;
@@ -65,45 +83,49 @@ function mergeBottomUp(array, left, step) {
   }
 }
 
+
 function* qsort(arr) {
-    let stack = arr.slice(1);
-    let sorted = arr;
-    let pivot = arr[0];
-    let left = [];
-    let right = [];
-    let mid = arr.length/2;
-
-
+    let stack = [arr];
+    let sorted = [];
     while (stack.length) {
-      for(let i = 0; i < stack.length; i++) {
-        if (stack[i] < pivot) {
-          left.push(stack.shift);
-        } else {
-          right.push(stack.shift);
+        let temp = stack.pop(), tl = temp.length;
+
+
+        if (tl === 1) {
+            sorted.push(temp[0]);
+            continue;
+        }
+        let pivot = temp[0];
+        let left = [], right = [];
+
+        for (let i = 1; i < tl; i++) {
+            if (temp[i] < pivot) {
+                left.push(temp[i]);
+            } else {
+                right.push(temp[i]);
+            }
         }
 
-      }
-      yield left.concat(pivot).concat(right);
+
+        left.push(pivot);
+
+        if (right.length)
+            stack.push(right);
+        if (left.length)
+            stack.push(left);
+
+            let flat = stack.flatten().reverse();
+            let tempor = sorted.concat(flat);
+            for(let j = 0; j < tempor.length; j++) {
+
+            arr[j] = tempor[j];
+          }
+          yield tempor;
     }
+
 
 }
 
 
-function* quickSort(arr) {
-  debugger;
 
-    if (arr.length <= 1) { return arr; }
-
-
-      const pivot = arr[0];
-
-      let left = arr.slice(1).filter( (el) => el < pivot);
-      let right = arr.slice(1).filter( (el) => el >= pivot);
-
-        left = quickSort(left);
-        right = quickSort(right);
-
-      return left.concat([pivot]).concat(right);
-    }
-
-  module.exports = { bubbleSort, qsort, selectionSort, mergeSortBottomUp };
+  module.exports = { qsort, bubbleSort, selectionSort, mergeSortBottomUp };

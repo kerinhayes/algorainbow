@@ -67,14 +67,13 @@ class Visuals {
 
   draw() {
     this.nums.forEach((num, idx)=> {
-
-      let gradient = this.ctx.createLinearGradient(0, 0, 0, 75);
-      gradient.addColorStop(0, `${this.colorMap[num]} .9)`);
-      gradient.addColorStop(.25, `${this.colorMap[num]} .75)`);
-      gradient.addColorStop(.5, `${this.colorMap[num]} .5)`);
-      gradient.addColorStop(.75, `${this.colorMap[num]} .25)`);
-      gradient.addColorStop(1, `${this.colorMap[num]} .1)`);
-      this.ctx.fillStyle = gradient;
+      // let gradient = this.ctx.createLinearGradient(0, 0, 0, 75);
+      // gradient.addColorStop(0, `${this.colorMap[num]} .9)`);
+      // gradient.addColorStop(.25, `${this.colorMap[num]} .75)`);
+      // gradient.addColorStop(.5, `${this.colorMap[num]} .5)`);
+      // gradient.addColorStop(.75, `${this.colorMap[num]} .25)`);
+      // gradient.addColorStop(1, `${this.colorMap[num]} .1)`);
+      this.ctx.fillStyle = `${this.colorMap[num]} .9)`;
       this.ctx.fillRect(idx, 0, 1, 75);
 
 
@@ -82,26 +81,18 @@ class Visuals {
 
   }
 
-  goDraw(sorter, time) {
-    let fps, fpsInterval, startTime, now, then, elapsed;
+  goDraw(sorter) {
+
     const sort = sorter(this.nums);
 
     const animate = () => {
       requestAnimationFrame(animate);
+      sort.next();
+        this.ctx.clearRect(0, 0, 520, 75);
 
-      now = Date.now();
-      elapsed = now - then;
-
-      if (elapsed > fpsInterval) {
-
-        then = now - (elapsed % fpsInterval);
         this.draw();
-        sort.next();
-      }
-    };
-      fpsInterval = 1000 / time;
-      then = Date.now();
-      startTime = then;
+
+      };
 
       animate();
 
