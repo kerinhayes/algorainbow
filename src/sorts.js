@@ -19,11 +19,11 @@ function* bubbleSort(arr) {
       for (let i = 0; i < arr.length - 1; i++) {
         if (arr[i] > arr[i + 1]) {
           sorted = false;
-          yield sorted;
+          // yield sorted;
           [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];}
         }
 
-        // yield sorted;
+        yield sorted;
     }
 }
 
@@ -33,13 +33,13 @@ function* selectionSort(arr) {
         for(let i = j + 1; i < arr.length; i++) {
           if (arr[i] < arr[min]) {
             min = i;
-            yield min;
+            // yield min;
 
           }
         }
         if (j !== min) {
           [arr[j], arr[min]] = [arr[min], arr[j]];
-          // yield min;
+          yield min;
         }
     }
 }

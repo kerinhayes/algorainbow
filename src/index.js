@@ -56,9 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(selVis.goDraw(Sorts.selectionSort), 30);
         setTimeout(mergeVis.goDraw(Sorts.mergeSortBottomUp), 20);
         setTimeout(vis.goDraw(Sorts.qsort), 5);
-
-
-
       });
 
 
