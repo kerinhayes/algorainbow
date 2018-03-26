@@ -25,6 +25,7 @@ The app will have a single screen with the main visualization window, sorting ch
 * Selection Sort
   * ![select](https://github.com/kerinhayes/algorainbow/blob/master/images/select-gif.gif)
 
+[live](http://kerinhayes.com/algorainbow)
 
 ### TODO
 
