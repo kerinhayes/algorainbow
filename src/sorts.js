@@ -12,7 +12,7 @@ this.forEach( (el) => {
   return flattened;
 };
 
-function* bubbleSort(arr) {
+function* bubbleSort(arr, slow) {
   let sorted = false;
     while (!sorted) {
       sorted = true;
@@ -120,7 +120,7 @@ function* qsort(arr) {
 
             arr[j] = tempor[j];
           }
-          yield tempor;
+          yield arr;
     }
 
 

@@ -89,10 +89,9 @@ class Visuals {
       requestAnimationFrame(animate);
       sort.next();
         this.ctx.clearRect(0, 0, 520, 75);
-
         this.draw();
-
       };
+    
 
       animate();
 

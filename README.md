@@ -6,10 +6,6 @@ Users will be able to choose an algorithm and watch the colors align into a rain
 
 The app will have a single screen with the main visualization window, sorting choices and a timer on the left, and nav links to my information below.
 
-![quick](https://github.com/kerinhayes/algorainbow/blob/master/images/quick-gif.gif)
-![merge](https://github.com/kerinhayes/algorainbow/blob/master/images/merge-gif.gif)
-![select](https://github.com/kerinhayes/algorainbow/blob/master/images/select-gif.gif)
-![bubble](https://github.com/kerinhayes/algorainbow/blob/master/images/bubble-gif.gif)
 
 
 ### Technologies
@@ -21,6 +17,18 @@ The app will have a single screen with the main visualization window, sorting ch
 ### Algorithms
 
 * Merge Sort
+![merge](https://github.com/kerinhayes/algorainbow/blob/master/images/merge-gif.gif)
 * Bubble Sort
+![bubble](https://github.com/kerinhayes/algorainbow/blob/master/images/bubble-gif.gif)
 * Quick Sort
+![quick](https://github.com/kerinhayes/algorainbow/blob/master/images/quick-gif.gif)
 * Selection Sort
+![select](https://github.com/kerinhayes/algorainbow/blob/master/images/select-gif.gif)
+
+
+### TODO
+
+* slow down bubble and selection frame rate
+* pause/play/individual shuffle
+* algorithm descriptions
+* maybe more algorithms
