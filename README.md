@@ -25,12 +25,13 @@ The app will have a single screen with the main visualization window, sorting ch
 * Selection Sort
   * ![select](https://github.com/kerinhayes/algorainbow/blob/master/images/select-gif.gif)
 * Insertion Sort
+  * ![select](https://github.com/kerinhayes/algorainbow/blob/master/images/insert.gif)
 
 [live](http://kerinhayes.com/algorainbow)
 
 ### TODO
 
-* have fast and slow playback options 
+* have fast and slow playback options
 * pause/play/individual shuffle
 * algorithm descriptions
 * maybe more algorithms
