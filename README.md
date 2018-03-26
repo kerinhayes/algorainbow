@@ -17,13 +17,13 @@ The app will have a single screen with the main visualization window, sorting ch
 ### Algorithms
 
 * Merge Sort
-![merge](https://github.com/kerinhayes/algorainbow/blob/master/images/merge-gif.gif)
+  * ![merge](https://github.com/kerinhayes/algorainbow/blob/master/images/merge-gif.gif)
 * Bubble Sort
-![bubble](https://github.com/kerinhayes/algorainbow/blob/master/images/bubble-gif.gif)
+  * ![bubble](https://github.com/kerinhayes/algorainbow/blob/master/images/bubble-gif.gif)
 * Quick Sort
-![quick](https://github.com/kerinhayes/algorainbow/blob/master/images/quick-gif.gif)
+  * ![quick](https://github.com/kerinhayes/algorainbow/blob/master/images/quick-gif.gif)
 * Selection Sort
-![select](https://github.com/kerinhayes/algorainbow/blob/master/images/select-gif.gif)
+  * ![select](https://github.com/kerinhayes/algorainbow/blob/master/images/select-gif.gif)
 
 
 ### TODO
