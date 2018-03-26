@@ -27,6 +27,20 @@ function* bubbleSort(arr, slow) {
     }
 }
 
+function* insertionSort(array) {
+  for(let i= 0; i < array.length; i++) {
+    let temp = array[i];
+    let j = i - 1;
+    while (j >= 0 && array[j] > temp) {
+      array [j + 1] = array[j];
+      j--;
+    }
+    array[j + 1] = temp;
+    yield array;
+  }
+
+}
+
 function* selectionSort(arr) {
     for(let j = 0; j < arr.length - 1; j++) {
       let min = j;
@@ -128,4 +142,4 @@ function* qsort(arr) {
 
 
 
-  module.exports = { qsort, bubbleSort, selectionSort, mergeSortBottomUp };
+  module.exports = { qsort, bubbleSort, selectionSort, mergeSortBottomUp, insertionSort };

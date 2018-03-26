@@ -22,7 +22,7 @@ h1 {
 
 }
 
-#merge, #shuffle, #selection, #bubble, #quick, #start-all {
+#merge, #shuffle, #selection, #bubble, #quick, #start-all, #insert {
   font-family: 'courier new';
   font-weight: bold;
   color: #191970;
@@ -30,8 +30,8 @@ h1 {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  padding-left: 10px;
-  padding-right: 10px;
+
+  padding-right: 5px;
   border-radius: 5px;
 }
 
@@ -46,7 +46,7 @@ h1 {
 
 .canvas-div {
   position: relative;
-  height: 450px;
+  height: 550px;
   width: 600px;
   align-self: center;
 }
@@ -76,6 +76,13 @@ h1 {
 #bubble-canvas {
   position: absolute;
   top: 335px;
+  left: 40px;
+  z-index: 3;
+}
+
+#insertion-canvas {
+  position: absolute;
+  top: 435px;
   left: 40px;
   z-index: 3;
 }

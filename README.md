@@ -24,12 +24,13 @@ The app will have a single screen with the main visualization window, sorting ch
   * ![quick](https://github.com/kerinhayes/algorainbow/blob/master/images/quick-gif.gif)
 * Selection Sort
   * ![select](https://github.com/kerinhayes/algorainbow/blob/master/images/select-gif.gif)
+* Insertion Sort
 
 [live](http://kerinhayes.com/algorainbow)
 
 ### TODO
 
-* slow down bubble and selection frame rate
+* have fast and slow playback options 
 * pause/play/individual shuffle
 * algorithm descriptions
 * maybe more algorithms

@@ -25,21 +25,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const backContext = backCan.getContext("2d");
   const background = new Background(backContext);
 
-    const mergeButton = document.getElementById("merge");
-      mergeButton.addEventListener("click", () =>
-      mergeVis.goDraw(Sorts.mergeSortBottomUp));
+  const insertCan = document.getElementById("insertion-canvas");
+  const insertCon = insertCan.getContext("2d");
+  const insertVis = new Visuals(insertCon);
 
-    const bubbleButton = document.getElementById("bubble");
-      bubbleButton.addEventListener("click", () =>
-      bubVis.goDraw(Sorts.bubbleSort));
+  const mergeButton = document.getElementById("merge");
+    mergeButton.addEventListener("click", () =>
+    mergeVis.goDraw(Sorts.mergeSortBottomUp));
 
-    const selectionButton = document.getElementById("selection");
-      selectionButton.addEventListener("click", () =>
-      selVis.goDraw(Sorts.selectionSort));
+  const bubbleButton = document.getElementById("bubble");
+    bubbleButton.addEventListener("click", () =>
+    bubVis.goDraw(Sorts.bubbleSort));
 
-    const quickButton = document.getElementById("quick");
-      quickButton.addEventListener("click", () =>
-      vis.goDraw(Sorts.qsort));
+  const selectionButton = document.getElementById("selection");
+    selectionButton.addEventListener("click", () =>
+    selVis.goDraw(Sorts.selectionSort));
+
+  const quickButton = document.getElementById("quick");
+    quickButton.addEventListener("click", () =>
+    vis.goDraw(Sorts.qsort));
+
+  const insertButton = document.getElementById('insert');
+    insertButton.addEventListener("click", () =>
+    insertVis.goDraw(Sorts.insertionSort));
 
 
     const shuffleButton = document.getElementById("shuffle");
