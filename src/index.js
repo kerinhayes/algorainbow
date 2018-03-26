@@ -56,6 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
         selVis.shuffleArray(selVis.nums);
         mergeVis.shuffleArray(mergeVis.nums);
         vis.shuffleArray(vis.nums);
+        insertVis.shuffleArray(insertVis.nums);
+
       });
 
     const allGo = document.getElementById('start-all');
@@ -64,6 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(selVis.goDraw(Sorts.selectionSort), 30);
         setTimeout(mergeVis.goDraw(Sorts.mergeSortBottomUp), 20);
         setTimeout(vis.goDraw(Sorts.qsort), 5);
+        setTimeout(insertVis.goDraw(Sorts.insertionSort), 15);
+
       });
 
 
