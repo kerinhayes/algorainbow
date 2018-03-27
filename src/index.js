@@ -35,11 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const bubbleButton = document.getElementById("bubble");
     bubbleButton.addEventListener("click", () =>
-    bubVis.goDraw(Sorts.bubbleSort));
+    bubVis.goDraw(Sorts.bubbleSort, 40));
 
   const selectionButton = document.getElementById("selection");
     selectionButton.addEventListener("click", () =>
-    selVis.goDraw(Sorts.selectionSort));
+    selVis.goDraw(Sorts.selectionSort, 40));
 
   const quickButton = document.getElementById("quick");
     quickButton.addEventListener("click", () =>
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const insertButton = document.getElementById('insert');
     insertButton.addEventListener("click", () =>
-    insertVis.goDraw(Sorts.insertionSort));
+    insertVis.goDraw(Sorts.insertionSort, 40));
 
 
     const shuffleButton = document.getElementById("shuffle");
@@ -62,11 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const allGo = document.getElementById('start-all');
       allGo.addEventListener('click', () => {
-        setTimeout(bubVis.goDraw(Sorts.bubbleSort), 10);
-        setTimeout(selVis.goDraw(Sorts.selectionSort), 30);
-        setTimeout(mergeVis.goDraw(Sorts.mergeSortBottomUp), 20);
-        setTimeout(vis.goDraw(Sorts.qsort), 5);
-        setTimeout(insertVis.goDraw(Sorts.insertionSort), 15);
+        bubVis.goDraw(Sorts.bubbleSort, 50);
+        selVis.goDraw(Sorts.selectionSort, 50);
+        mergeVis.goDraw(Sorts.mergeSortBottomUp);
+        vis.goDraw(Sorts.qsort);
+        insertVis.goDraw(Sorts.insertionSort, 50);
 
       });
 

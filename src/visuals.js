@@ -34,6 +34,7 @@ class Visuals {
       26: 'rgba(255, 51, 51,'
     };
 
+
       this.popArray();
       this.shuffleArray(this.nums);
       this.draw();
@@ -81,17 +82,22 @@ class Visuals {
 
   }
 
-  goDraw(sorter) {
+  goDraw(sorter, fps) {
 
     const sort = sorter(this.nums);
 
+
     const animate = () => {
-      requestAnimationFrame(animate);
-      sort.next();
-        this.ctx.clearRect(0, 0, 520, 75);
-        this.draw();
+      const that = this;
+      setTimeout(function() {
+        requestAnimationFrame(animate);
+        sort.next();
+        that.ctx.clearRect(0, 0, 520, 75);
+        that.draw();
+      }, 1000/fps);
+
       };
-    
+
 
       animate();
 
