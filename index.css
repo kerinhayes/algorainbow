@@ -16,13 +16,23 @@ h1 {
   display: flex;
   position: absolute;
   justify-content: space-around;
-  bottom: 10px;
-  left: 40px;
+  bottom: 45px;
+  left: 355px;
   z-index: 5;
-
 }
 
-#merge, #shuffle, #selection, #bubble, #quick, #start-all, #insert {
+.merge-buttons, .selection-buttons, .bubble-buttons, .insertion-buttons, .merge-buttons, .quick-button {
+  display: flex;
+  width: 87%;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+
+
+#merge, #shuffle, #selection, #bubble,
+#quick, #start-all, #insert, #slow-bubble,
+#slow-insert, #slow-select, #fast-merge {
   font-family: 'courier new';
   font-weight: bold;
   color: #191970;
@@ -31,39 +41,52 @@ h1 {
   border: none;
   cursor: pointer;
 
-  padding-right: 5px;
+  /* padding-right: 5px; */
   border-radius: 5px;
 }
 
-#merge:hover, #shuffle:hover, #selection:hover, #bubble:hover, #quick:hover, #start-all:hover {
+#merge:hover, #shuffle:hover, #selection:hover, #bubble:hover, #quick:hover, #start-all:hover, #insert:hover {
   background-color: #191970;
   color: #CCCCFF;
 }
 
-#merge:focus, #shuffle:focus, #selection:focus, #bubble:focus, #quick:focus, #start-all:focus {
+#merge:focus, #shuffle:focus, #selection:focus, #bubble:focus, #quick:focus, #start-all:focus, #insert:focus {
   outline: none;
 }
 
 .canvas-div {
   position: relative;
-  height: 550px;
+  height: 600px;
   width: 600px;
   align-self: center;
 }
 
 #window-canvas {
   position: absolute;
-  top: 35px;
+  top: 25px;
   left: 40px;
   z-index: 3;
 
 }
 
+.quick-button {
+  position: absolute;
+  top: 0px;
+  left: 40px;
+
+}
+
 #merge-canvas {
   position: absolute;
-  top: 135px;
+  top: 130px;
   left: 40px;
   z-index: 3;
+}
+
+.merge-buttons {
+  position: absolute;
+  top: 105px;
+  left: 100px;
 }
 
 #selection-canvas {
@@ -73,18 +96,36 @@ h1 {
   z-index: 3;
 }
 
+.selection-buttons {
+  position: absolute;
+  top: 210px;
+  left: 160px;
+}
+
 #bubble-canvas {
   position: absolute;
-  top: 335px;
+  top: 340px;
   left: 40px;
   z-index: 3;
 }
 
+.bubble-buttons {
+  position: absolute;
+  top: 315px;
+  left: 240px;
+}
+
 #insertion-canvas {
   position: absolute;
-  top: 435px;
+  top: 445px;
   left: 40px;
   z-index: 3;
+}
+
+.insertion-buttons {
+  position: absolute;
+  top: 420px;
+  left: 300px;
 }
 
 #background-canvas {
