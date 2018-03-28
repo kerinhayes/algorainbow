@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const selCon = selCan.getContext("2d");
   const selVis = new Visuals(selCon);
 
-  const backCan = document.getElementById("background-canvas");
-  const backContext = backCan.getContext("2d");
-  const background = new Background(backContext);
+  // const backCan = document.getElementById("background-canvas");
+  // const backContext = backCan.getContext("2d");
+  // const background = new Background(backContext);
 
   const insertCan = document.getElementById("insertion-canvas");
   const insertCon = insertCan.getContext("2d");
