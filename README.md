@@ -1,20 +1,54 @@
-## Javascript Project Proposal
+## algorainbow
 
-Sorting Algorithm Visualizer that uses color pixels to represent elements in a numbered array.
+A colorful sorting algorithm visualizer built with JavaScript and HTML5 Canvas.
 
-Users will be able to choose an algorithm and watch the colors align into a rainbow-ish display, and buttons on the side will allow them to toggle between different options and perhaps to control speed of animation.
+[see it here](http://kerinhayes.com/algorainbow)
 
-The app will have a single screen with the main visualization window, sorting choices and a timer on the left, and nav links to my information below.
+### how it works
+
+Each integer in an array is represented by one of 26 colors, and algorithms are implemented with iterative generator functions which send the array to be rendered at indicated steps of the sorting process.
 
 
+```JavaScript
+ function* bubbleSort(arr) {
+  let sorted = false;
+    while (!sorted) {
+      sorted = true;
+      for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+          sorted = false;
+          [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];}
+        }
+        yield sorted;
+    }
+} ```
 
-### Technologies
+Animations show how elements are grouped and sorted and lower frame rates are used for the algorithms with slower time complexities to provide a more realistic picture.
 
-* Javascript for logic
-* Canvas for rendering
-* Webpack
+```JavaScript
+goDraw(sorter, fps) {
+  const sort = sorter(this.nums);
 
-### Algorithms
+  const animate = () => {
+    const that = this;
+      setTimeout(function() {
+        requestAnimationFrame(animate);
+        sort.next();
+        that.ctx.clearRect(0, 0, 520, 75);
+        that.draw();
+      }, 1000/fps);
+    };
+    animate();
+} ```
+
+Buttons use event listeners so users can play animations, reshuffle, and play again.  Algorithms can be activated individually or all at once.
+
+```JavaScript
+const bubbleButton = document.getElementById("bubble");
+  bubbleButton.addEventListener("click", () =>
+  bubVis.goDraw(Sorts.bubbleSort, 40)); ```
+
+### how it looks
 
 * Merge Sort
   * ![merge](https://github.com/kerinhayes/algorainbow/blob/master/images/merge-gif.gif)
@@ -25,13 +59,6 @@ The app will have a single screen with the main visualization window, sorting ch
 * Selection Sort
   * ![select](https://github.com/kerinhayes/algorainbow/blob/master/images/select-gif.gif)
 * Insertion Sort
-  * ![select](https://github.com/kerinhayes/algorainbow/blob/master/images/insert.gif)
+  * ![insert](https://github.com/kerinhayes/algorainbow/blob/master/images/insert.gif)
 
 [live](http://kerinhayes.com/algorainbow)
-
-### TODO
-
-* have fast and slow playback options
-* pause/play/individual shuffle
-* algorithm descriptions
-* maybe more algorithms

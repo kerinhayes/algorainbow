@@ -38,9 +38,6 @@ class Visuals {
       this.popArray();
       this.shuffleArray(this.nums);
       this.draw();
-      // this.goDraw(Sorts.selectionSort);
-      // this.goDraw(Sorts.mergeSortBottomUp, 10);
-
   }
 
 
@@ -68,39 +65,24 @@ class Visuals {
 
   draw() {
     this.nums.forEach((num, idx)=> {
-      // let gradient = this.ctx.createLinearGradient(0, 0, 0, 75);
-      // gradient.addColorStop(0, `${this.colorMap[num]} .9)`);
-      // gradient.addColorStop(.25, `${this.colorMap[num]} .75)`);
-      // gradient.addColorStop(.5, `${this.colorMap[num]} .5)`);
-      // gradient.addColorStop(.75, `${this.colorMap[num]} .25)`);
-      // gradient.addColorStop(1, `${this.colorMap[num]} .1)`);
       this.ctx.fillStyle = `${this.colorMap[num]} .9)`;
       this.ctx.fillRect(idx, 0, 1, 75);
-
-
     });
-
   }
 
   goDraw(sorter, fps) {
-
     const sort = sorter(this.nums);
-
 
     const animate = () => {
       const that = this;
-      setTimeout(function() {
-        requestAnimationFrame(animate);
-        sort.next();
-        that.ctx.clearRect(0, 0, 520, 75);
-        that.draw();
-      }, 1000/fps);
-
+        setTimeout(function() {
+          requestAnimationFrame(animate);
+          sort.next();
+          that.ctx.clearRect(0, 0, 520, 75);
+          that.draw();
+        }, 1000/fps);
       };
-
-
       animate();
-
   }
 
 

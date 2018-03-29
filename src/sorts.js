@@ -12,47 +12,38 @@ this.forEach( (el) => {
   return flattened;
 };
 
-function* bubbleSort(arr, slow) {
-  let counter = 0;
+function* bubbleSort(arr) {
   let sorted = false;
     while (!sorted) {
       sorted = true;
       for (let i = 0; i < arr.length - 1; i++) {
-        counter ++;
         if (arr[i] > arr[i + 1]) {
           sorted = false;
-          // yield sorted;
           [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];}
         }
-
         yield sorted;
     }
-    console.log(counter);
 }
 
 function* insertionSort(array) {
-  let counter = 0;
   for(let i= 0; i < array.length; i++) {
     let temp = array[i];
     let j = i - 1;
     while (j >= 0 && array[j] > temp) {
       array [j + 1] = array[j];
-      counter ++;
+
       j--;
     }
     yield array;
     array[j + 1] = temp;
   }
-  console.log(counter);
 }
 
 function* selectionSort(arr) {
-  let counter = 0;
     for(let j = 0; j < arr.length - 1; j++) {
       let min = j;
         for(let i = j + 1; i < arr.length; i++) {
           if (arr[i] < arr[min]) {
-            counter ++;
             min = i;
             // yield min;
 
@@ -60,31 +51,25 @@ function* selectionSort(arr) {
         }
         if (j !== min) {
           [arr[j], arr[min]] = [arr[min], arr[j]];
-          counter ++;
           yield min;
         }
     }
-    console.log(counter);
 }
 
 
 function* mergeSortBottomUp(array) {
-  let counter = 0;
   let step = 1;
   while (step < array.length) {
-    counter ++;
     let left = 0;
     while (left + step < array.length) {
       mergeBottomUp(array, left, step);
       left += step * 2;
-      counter ++;
       yield step;
 
     }
     step *= 2;
 
   }
-  console.log(counter);
 }
 
 function mergeBottomUp(array, left, step) {
@@ -122,7 +107,6 @@ function* qsort(arr) {
     while (stack.length) {
         let temp = stack.pop(), tl = temp.length;
 
-
         if (tl === 1) {
             sorted.push(temp[0]);
             continue;
@@ -137,7 +121,6 @@ function* qsort(arr) {
                 right.push(temp[i]);
             }
         }
-
 
         left.push(pivot);
 

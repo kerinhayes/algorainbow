@@ -12,21 +12,50 @@ h1 {
   letter-spacing: 3px;
 }
 
-.buttons {
-  display: flex;
-  position: absolute;
-  justify-content: space-around;
-  bottom: 45px;
-  left: 355px;
-  z-index: 5;
+.foot {
+  position: relative;
 }
 
-.merge-buttons, .selection-buttons, .bubble-buttons, .insertion-buttons, .merge-buttons, .quick-button {
+.foot-list {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+.foot-list h4 {
+  margin: 0;
+  color: #191970;
+  padding-top: 5px;
+}
+
+[class*="fa-"] {
+  font-size: 24px;
+  color: #191970;
+}
+
+.foot-list li {
+  padding-right: 30px;
+}
+
+.shuffle-button {
+  position: absolute;
+  left: 390px;
+  bottom: 50px;
+
+}
+
+.everything {
+  position: absolute;
+  left: 510px;
+  bottom: 50px;
+}
+
+/* .merge-buttons, .selection-buttons, .bubble-buttons, .insertion-buttons, .merge-buttons, .quick-button {
   display: flex;
   width: 87%;
   justify-content: space-between;
   z-index: 5;
-}
+} */
 
 
 
