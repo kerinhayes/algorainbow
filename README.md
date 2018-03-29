@@ -21,7 +21,8 @@ Each integer in an array is represented by one of 26 colors, and algorithms are 
         }
         yield sorted;
     }
-} ```
+}
+```
 
 Animations show how elements are grouped and sorted and lower frame rates are used for the algorithms with slower time complexities to provide a more realistic picture.
 
@@ -39,14 +40,16 @@ goDraw(sorter, fps) {
       }, 1000/fps);
     };
     animate();
-} ```
+}
+```
 
 Buttons use event listeners so users can play animations, reshuffle, and play again.  Algorithms can be activated individually or all at once.
 
 ```JavaScript
 const bubbleButton = document.getElementById("bubble");
   bubbleButton.addEventListener("click", () =>
-  bubVis.goDraw(Sorts.bubbleSort, 40)); ```
+  bubVis.goDraw(Sorts.bubbleSort, 40));
+```
 
 ### how it looks
 
