@@ -1,6 +1,6 @@
 ## algorainbow
 
-A colorful sorting algorithm visualizer built with JavaScript and HTML5 Canvas.
+A colorful sorting algorithm visualization built with JavaScript and HTML5 Canvas.
 
 [see it here](http://kerinhayes.com/algorainbow)
 
@@ -60,8 +60,6 @@ const bubbleButton = document.getElementById("bubble");
 * Quick Sort
   * ![quick](https://github.com/kerinhayes/algorainbow/blob/master/images/quick-gif.gif)
 * Selection Sort
-  * ![select](https://github.com/kerinhayes/algorainbow/blob/master/images/select-gif.gif)
+  * ![select](https://github.com/kerinhayes/algorainbow/blob/master/images/selection-gif.gif)
 * Insertion Sort
-  * ![insert](https://github.com/kerinhayes/algorainbow/blob/master/images/insert.gif)
-
-[live](http://kerinhayes.com/algorainbow)
+  * ![insert](https://github.com/kerinhayes/algorainbow/blob/master/images/insertion-gif.gif)
