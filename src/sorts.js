@@ -12,7 +12,7 @@ this.forEach( (el) => {
   return flattened;
 };
 
-function* bubbleSort(arr) {
+function* bubbleSort(arr, ready) {
   let sorted = false;
     while (!sorted) {
       sorted = true;

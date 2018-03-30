@@ -38,6 +38,9 @@ class Visuals {
       this.popArray();
       this.shuffleArray(this.nums);
       this.draw();
+
+      this.ready = true;
+      this.fps = null;
   }
 
 
@@ -70,21 +73,26 @@ class Visuals {
     });
   }
 
-  goDraw(sorter, fps) {
-    const sort = sorter(this.nums);
+  goDraw(sorter, fps = this.fps, ready = this.ready) {
 
     const animate = () => {
       const that = this;
-        setTimeout(function() {
-          requestAnimationFrame(animate);
-          sort.next();
-          that.ctx.clearRect(0, 0, 520, 75);
-          that.draw();
-        }, 1000/fps);
-      };
+      setTimeout(function() {
+        requestAnimationFrame(animate);
+        sort.next();
+        that.ctx.clearRect(0, 0, 520, 75);
+        that.draw();
+      }, 1000/fps);
+      that.ready = false;
+    };
+    const nums = this.nums;
+    const sort = sorter(this.nums);
+    if (ready === false) {
+      sort.return();
+    } else {
       animate();
+    }
   }
-
 
 
 }
