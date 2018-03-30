@@ -29,8 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const insertCon = insertCan.getContext("2d");
   const insertVis = new Visuals(insertCon);
 
-  const mergeButton = document.getElementById("merge");
-    mergeButton.addEventListener("click", () => {
+  function merge() {
+      mergeButton.disabled = true;
+      allGo.disabled = true;
+      setTimeout(() => {
+        mergeButton.disabled = false;
+        allGo.disabled = false;}, 8000);
       if (mergeVis.ready === false) {
         mergeVis.ready = true;
         mergeVis.shuffleArray(mergeVis.nums);
@@ -38,10 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       mergeVis.goDraw(Sorts.mergeSortBottomUp);
       mergeVis.ready = false;
-    });
+  }
 
-  const bubbleButton = document.getElementById("bubble");
-    bubbleButton.addEventListener("click", () => {
+  const mergeButton = document.getElementById("merge");
+    mergeButton.addEventListener("click", merge);
+
+    function bubble() {
+      bubbleButton.disabled = true;
+      allGo.disabled = true;
+      setTimeout(() => {
+        bubbleButton.disabled = false;
+        allGo.disabled = false;}, 18000);
       bubVis.fps = 40;
       if (bubVis.ready === false) {
         bubVis.ready = true;
@@ -50,10 +61,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       bubVis.goDraw(Sorts.bubbleSort);
       bubVis.ready = false;
-    });
+    }
 
-  const selectionButton = document.getElementById("selection");
-    selectionButton.addEventListener("click", () => {
+  const bubbleButton = document.getElementById("bubble");
+    bubbleButton.addEventListener("click", bubble);
+
+    function select() {
+      selectionButton.disabled = true;
+      allGo.disabled = true;
+      setTimeout(() => {
+        selectionButton.disabled = false;
+        allGo.disabled = false;}, 18000);
       selVis.fps = 40;
       if (selVis.ready === false) {
         selVis.ready = true;
@@ -62,10 +80,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       selVis.goDraw(Sorts.selectionSort);
       selVis.ready = false;
-    });
+    }
 
-  const quickButton = document.getElementById("quick");
-    quickButton.addEventListener("click", () => {
+  const selectionButton = document.getElementById("selection");
+    selectionButton.addEventListener("click", select);
+
+  function quick() {
+
+      quickButton.disabled = true;
+      allGo.disabled = true;
+      setTimeout(() => {
+        quickButton.disabled = false;
+        allGo.disabled = false;}, 8000);
       if (vis.ready === false) {
         vis.ready = true;
         vis.shuffleArray(vis.nums);
@@ -73,10 +99,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       vis.goDraw(Sorts.qsort);
       vis.ready = false;
-    });
+  }
 
-  const insertButton = document.getElementById('insert');
-    insertButton.addEventListener("click", () => {
+  const quickButton = document.getElementById("quick");
+    quickButton.addEventListener("click", quick);
+
+    function insert() {
+      insertButton.disabled = true;
+      allGo.disabled = true;
+      setTimeout(() => {
+        insertButton.disabled = false;
+        allGo.disabled = false;}, 18000);
       insertVis.fps = 40;
       if (insertVis.ready === false) {
         insertVis.ready = true;
@@ -85,28 +118,50 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       insertVis.goDraw(Sorts.insertionSort);
       insertVis.ready = false;
-    });
+    }
+
+  const insertButton = document.getElementById('insert');
+    insertButton.addEventListener("click", insert);
+
+    //
+    // const shuffleButton = document.getElementById("shuffle");
+    //   shuffleButton.addEventListener("click", () => {
+    //     bubVis.shuffleArray(bubVis.nums);
+    //     selVis.shuffleArray(selVis.nums);
+    //     mergeVis.shuffleArray(mergeVis.nums);
+    //     vis.shuffleArray(vis.nums);
+    //     insertVis.shuffleArray(insertVis.nums);
+    //
+    //   });
+
+    const allGo = document.getElementById('start-all');
+      allGo.addEventListener('click', () => {
+        allGo.disabled = true;
+        let timer;
+        if (allGo.textContent === "sort all") {
+          timer = 18000;
+        } else { timer = 1; }
 
 
-    const shuffleButton = document.getElementById("shuffle");
-      shuffleButton.addEventListener("click", () => {
+        setTimeout(() => { allGo.disabled = false;}, timer);
+
+      if (allGo.textContent === "sort all") {
+        allGo.textContent = "shuffle all";
+        merge();
+        quick();
+        select();
+        bubble();
+        insert();
+      } else {
         bubVis.shuffleArray(bubVis.nums);
         selVis.shuffleArray(selVis.nums);
         mergeVis.shuffleArray(mergeVis.nums);
         vis.shuffleArray(vis.nums);
         insertVis.shuffleArray(insertVis.nums);
+        allGo.textContent = "sort all";
 
-      });
+      }
 
-    const allGo = document.getElementById('start-all');
-      allGo.addEventListener('click', () => {
-
-
-        bubVis.goDraw(Sorts.bubbleSort, 50, true);
-        selVis.goDraw(Sorts.selectionSort, 50, true);
-        mergeVis.goDraw(Sorts.mergeSortBottomUp, null, true);
-        vis.goDraw(Sorts.qsort, null, true);
-        insertVis.goDraw(Sorts.insertionSort, 50, true);
 
       });
 
